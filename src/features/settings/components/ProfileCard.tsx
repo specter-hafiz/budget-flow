@@ -54,7 +54,7 @@ export default function ProfileCard({
       </View>
 
       <View style={{ flex: 1, gap: 4 }}>
-        <CustomText variant="subheading" color="primary">
+        <CustomText variant="subheading" color="primary" numberOfLines={1}>
           {name}
         </CustomText>
 

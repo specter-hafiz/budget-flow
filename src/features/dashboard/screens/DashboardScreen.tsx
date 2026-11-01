@@ -97,8 +97,8 @@ export function DashboardScreen() {
             </View>
           )}
 
-          <View>
-            <CustomText variant="heading">
+          <View style={{ flexShrink: 1 }}>
+            <CustomText variant="heading" numberOfLines={1}>
               {t("dashboard.welcome", {
                 name: profile?.name ?? t("dashboard.welcomeFallback"),
               })}
