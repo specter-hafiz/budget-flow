@@ -1,56 +1,97 @@
-# Welcome to your Expo app 👋
+# BudgetFlow
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+BudgetFlow is a mobile-first personal finance app built with Expo and React Native. It helps you track income and expenses, manage budgets, organize categories, and review spending trends in one place.
 
-## Get started
+## What it does
 
-1. Install dependencies
+- Track transactions with income and expense types
+- Create and manage monthly budgets by category
+- Add custom categories alongside built-in defaults
+- Review dashboard totals, recent activity, and net balance
+- Explore analytics with date ranges and category-level spending breakdowns
+- Switch languages and currencies to match your preferences
+- Back up and restore app data as JSON for safe transfer between devices
 
-   ```bash
-   npm install
-   ```
+## Tech stack
 
-2. Start the app
+- Expo SDK 57
+- React Native 0.86
+- Expo Router for navigation
+- TypeScript
+- Shopify Restyle for theming
+- MMKV for local persistence
+- i18next for multilingual support
 
-   ```bash
-   npx expo start
-   ```
+## Project structure
 
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
+```text
+src/
+  app/                  # screens and route definitions
+  core/                 # app state, persistence, i18n, theming
+  features/
+    analytics/          # analytics calculations and UI
+    budgets/            # budget management
+    dashboard/          # home/dashboard screen
+    onboarding/         # onboarding flow
+    settings/           # backup, restore, preferences
+    transactions/       # transaction logic and categories
+  shared/               # reusable UI, hooks, and helpers
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## Getting started
 
-### Other setup steps
+### Prerequisites
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+- Node.js 20+
+- npm or bun
+- iOS Simulator, Android Emulator, or Expo Go
 
-## Learn more
+### Install dependencies
 
-To learn more about developing your project with Expo, look at the following resources:
+```bash
+npm install
+```
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+### Start the app
 
-## Join the community
+```bash
+npm start
+```
 
-Join our community of developers creating universal apps.
+This launches Expo. From the terminal menu, you can choose to open:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- the app in an iOS simulator
+- the app in an Android emulator
+- the app in a web browser
+- Expo Go on a device
+
+### Run platform-specific commands
+
+```bash
+npm run android
+npm run ios
+npm run web
+```
+
+### Linting
+
+```bash
+npx expo lint
+```
+
+## Application flow
+
+1. Complete onboarding with your name and preferred language.
+2. Add transactions from the transactions screen.
+3. Set monthly budgets and custom categories as needed.
+4. Review your live balance and recent activity on the dashboard.
+5. Use analytics to compare spending across time periods and categories.
+6. Export or import a JSON backup from settings when you want to migrate data.
+
+## Data storage and backups
+
+BudgetFlow stores app state locally using MMKV and supports JSON backup/restore for your transactions, budgets, categories, profile, and settings. This makes the app useful for personal budgeting without needing a remote backend.
+
+## Notes
+
+This project is a standalone mobile budgeting app rather than a default Expo starter. It is tailored to the BudgetFlow experience and is ready for local development and iteration.
